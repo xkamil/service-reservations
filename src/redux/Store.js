@@ -4,8 +4,8 @@ const Store = {
         this.store = store;
     },
 
-    dispatch: function (action, data, error) {
-        this.store.dispatch({type: action, data, error});
+    dispatch: function (type, data) {
+        this.store.dispatch({type, data});
     }
 };
 

@@ -1,0 +1,182 @@
+$service-color: #fff;
+$service-hover-color: #aa7;
+$service-user-color: rgba(0, 0, 0, 0.3);
+$btn-time-add-color: #07f;
+$btn-time-reset-color: #f00;
+$btn-time-accept-color: #070;
+$font-color: #000;
+
+body {
+  margin: 10px;
+  padding: 0;
+  background-color: #444;
+
+  #root {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+
+    .service-container {
+      padding: 10px;
+
+      @media screen and (max-width: 800px) {
+        width: 100%;
+      }
+
+      @media screen and (min-width: 749px) and (max-width: 1000px) {
+        width: 50%;
+      }
+
+      @media screen and (min-width: 1001px) {
+        width: 33.33%;
+      }
+
+      .service {
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 2px;
+        background-color: $service-color;
+
+        &:hover {
+          background-color: $service-hover-color;
+        }
+
+        .service-free-slots {
+          align-self: flex-end;
+
+          div {
+            margin: 1px;
+            font-size: 2em;
+            text-align: center;
+            font-weight: 600;
+            color: $font-color;
+          }
+
+          img {
+            width: 30px;
+            height: 30px;
+            margin: 5px;
+            font-size: 2em;
+            text-align: center;
+            font-weight: 600;
+            color: $font-color;
+          }
+        }
+
+        .service-name {
+          font-size: 3em;
+          color: $font-color;
+          font-weight: 600;
+          align-self: center;
+          flex-grow: 1;
+        }
+
+        .service-users {
+          padding: 10px;
+
+          .service-user {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.5em;
+            font-weight: 600;
+            text-transform: uppercase;
+            background-color: $service-user-color;
+            padding: 0 10px;
+            margin-bottom: 5px;
+            border-radius: 2px;
+            color: $font-color;
+          }
+        }
+
+        .service-details {
+          display: flex;
+          flex-direction: column;
+
+          .service-details-time-buttons {
+            display: flex;
+            flex-grow: 1;
+          }
+
+          .service-details-total-time {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            .total-time-label {
+              font-size: 3em;
+              font-weight: 600;
+              flex-grow: 1;
+            }
+          }
+
+          .btn-time {
+            flex-grow: 1;
+            font-size: 1.7em;
+            justify-content: center;
+            color: $font-color;
+            font-weight: 700;
+            padding: 20px 0;
+            display: flex;
+            margin: 0px;
+            border-radius: 2px;
+          }
+
+          .btn-time-add {
+            background-color: $btn-time-add-color;
+          }
+
+          .btn-time-reset {
+            background-color: $btn-time-reset-color;
+          }
+
+          .btn-time-accept {
+            background-color: $btn-time-accept-color;
+            padding: 20px 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .popup-container {
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+    .popup {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: $font-color;
+      padding: 20px;
+      border-radius: 2px;
+      font-size: 1.5em;
+
+      .popup-buttons {
+        display: flex;
+        justify-content: center;
+
+        .popup-button {
+          cursor: pointer;
+          font-weight: 700;
+          background-color: #ccc;
+          margin: 15px 0 0 10px;
+          padding: 0 10px;
+          border-radius: 2px;
+        }
+      }
+    }
+  }
+}
+

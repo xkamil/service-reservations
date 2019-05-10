@@ -1,19 +1,19 @@
 import {combineReducers} from 'redux';
 import {SERVICES_UPDATE_ERROR, SERVICES_UPDATE_IN_PROGRESS, SERVICES_UPDATED} from "./servicesActions";
 
-const configInitialState = {
+const servicesInitialState = {
     updating: false,
     error: null,
-    services: []
+    items: []
 };
 
-function config(state = configInitialState, action) {
+function services(state = servicesInitialState, action) {
     switch (action.type) {
         case SERVICES_UPDATED : {
-            return {...state, services: action.data, updating: false};
+            return {...state, items: action.data, error: null, updating: false};
         }
         case SERVICES_UPDATE_ERROR : {
-            return {...state, services: [], error: action.error, updating: false}
+            return {...state, items: [], error: action.data, updating: false}
         }
         case SERVICES_UPDATE_IN_PROGRESS : {
             return {...state, updating: true}
@@ -24,4 +24,4 @@ function config(state = configInitialState, action) {
 }
 
 
-export default combineReducers({config});
+export default combineReducers({services});

@@ -8,8 +8,8 @@ export const SERVICES_UPDATE_IN_PROGRESS = 'SERVICES_UPDATE_IN_PROGRESS';
 function updateServices() {
     Store.dispatch(SERVICES_UPDATE_IN_PROGRESS);
     ApiClient.getServices()
-        .then(config => Store.dispatch(SERVICES_UPDATED, config, null))
-        .catch(error => Store.dispatch(SERVICES_UPDATE_ERROR, null, error))
+        .then(config => Store.dispatch(SERVICES_UPDATED, config))
+        .catch(error => Store.dispatch(SERVICES_UPDATE_ERROR, error))
 }
 
 export {

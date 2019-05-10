@@ -6,7 +6,7 @@ const services = [
         users: [
             {
                 name: "kamil",
-                to: "2019-05-08T20:45:02Z"
+                to: "2019-05-09T18:40:00Z"
             }
         ]
     },
@@ -17,7 +17,7 @@ const services = [
         users: [
             {
                 name: "kamil",
-                to: "2016-07-27T10:45:00Z"
+                to: "2019-07-27T10:45:00Z"
             },
             {
                 name: "tomek",
@@ -39,11 +39,11 @@ const services = [
                 to: "2019-05-08T20:45:02Z"
             },
             {
-                name: "ania",
+                name: "kinga",
                 to: "2019-05-08T20:45:02Z"
             },
             {
-                name: "ania",
+                name: "szymek",
                 to: "2019-05-08T20:45:02Z"
             }
         ]
@@ -53,7 +53,7 @@ const services = [
 
 async function getServices() {
     return new Promise((resolve, reject) => {
-        setTimeout(() => resolve(services), 2000)
+        setTimeout(() => resolve(services), 500)
     });
 }
 
